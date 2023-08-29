@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Магазин</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('info') }}">About us</a>
+        <a href="{{ url_for('contacts') }}">Contacts</a>
+    </nav>
+    <h1>Test page of education</h1>
+
+    {% block content %}{% endblock %}
+
+
+    <footer>
+        <div>
+            <p>Copyright © 2023 PDA. None Rights Reserved.</p>
+            <p>RU</p>
+        </div>
+    </footer>
+</body>
+</html>
