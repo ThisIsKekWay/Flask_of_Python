@@ -77,18 +77,22 @@ async def download_images_asyncio(urls):
 
 
 if __name__ == '__main__':
+
     if not os.path.isdir('images'):
         os.mkdir('images')
-    parser = argparse.ArgumentParser(description='Download images from URLs and save it to disk')
+
+    parser = argparse.ArgumentParser(description='Программа для загрузки изображений по URL')
     parser.add_argument('--func',
                         choices=['M', 'P', 'S', 'A'],
                         default='S',
-                        help='Select the function for file download: '
-                             'M for multithread, '
-                             'P for multiprocess, '
-                             'S for sync, '
-                             'A for asyncio')
-    parser.add_argument("--urls", nargs="+", default=image_urls ,help="A list of URLs to download images from.")
+                        help='Выберите режим работы программы: '
+                             'M для мультипоточного скачивания, '
+                             'P для мультипроцессорного скачивания, '
+                             'S для синхронного скачивания, '
+                             'A для асинхронного скачивания.')
+    parser.add_argument("--urls", nargs="+", default=image_urls ,
+                        help="Перечень URL-адресов для загрузки изображений."
+                             "Имеет тип списка")
     args = parser.parse_args()
 
     if args.func == 'M':
